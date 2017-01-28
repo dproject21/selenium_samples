@@ -9,10 +9,8 @@ class ResultPage
     @driver = driver
   end
 
-  def check_word(word)
-    element = @driver.find_element(:xpath, '//a[contains(@href, "' + word + '")]')
-
-    return element != nil
+  def get_elements(url)
+    return elements = @driver.find_elements(:xpath, "//a[(@href='" + url + "')]")
   end
 
 

@@ -12,6 +12,7 @@ step ":word を検索" do |word|
   @result_page = @top_page.search_word(word)
 end
 
-step ":word が出る" do |word|
-  @result_page.check_word(word)
+step "リンク :url がある" do |url|
+  elements = @result_page.get_elements(url)
+  expect(elements.length).to be > 0
 end
